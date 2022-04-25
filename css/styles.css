@@ -1,0 +1,216 @@
+﻿@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,700,900');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.container {
+    width: 95%;
+    max-width: 70em;
+    margin: 0 auto;
+}
+
+/* TYPOGRAPHY */
+
+h1{
+    font-weight: 300;
+    font-size: 1.7rem;
+    margin-top: 0; /* this is to fix the home-about-title that offsets it from the top*/
+}
+
+p {
+    margin-top: 0;
+    line-height: 1.5;
+}
+
+p:last-of-type { /* for the bottom paragraph*/
+    margin-bottom: 0;
+    
+}
+
+.title {
+    font-size: 2rem;
+    margin-bottom: 2em;
+    font-weight: 900; /* this line and the one after fix the title to be a bit centered*/
+    margin-top: 1em;
+}
+
+    .title span {
+        font-weight: 300;
+        display: block;
+        font-size: .9em;
+    }
+
+@media (min-width: 60rem) {
+    
+    p{
+        font-size: 1.2rem;
+        line-height: 1.6;
+    }
+    
+    .title {
+        font-size: 3.7rem;
+    }
+}
+
+/* BUTTONS */
+
+.button {
+    display: inline-block;
+    font-size: 1.25rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-width: 2px;
+    border-style: solid;
+    padding: .5em 1.75em;
+}
+
+.button-accent {
+    color: #00ff6c;
+    border-color: #00ff6c; /*to preserve the border color when clicked*/
+}
+
+    .button-accent:hover,
+    .button-accent:focus {
+        background: #00ff6c;
+        color: #232323;
+    }
+
+@media (min-width: 60rem) {
+    .button {
+        font-size: 1.5rem;
+    }
+}
+
+/* HEADER */
+header {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 1em;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav li {
+    display: inline-block;
+    margin: 1em;
+}
+
+nav a {
+    font-weight: 900;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: .8em;
+    padding: .5em;
+    color: #FFF;
+}
+
+    nav a:hover,
+    nav a:focus {
+        color: #DDD;
+    }
+
+@media (min-width: 800px) {
+    .logo {
+        float: left;
+    }
+
+    nav {
+        float: right;
+    }
+}
+
+/* HERO SECTION */
+
+.home-hero {
+    background-image: url(../img/hero-bg.jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 10em 0;
+    color: #FFF;
+}
+
+@media (min-width: 800px) {
+    .home-hero {
+        height: 100vh;
+        padding-top: 30vh;
+    }
+}
+
+/* ABOUT SECTION */
+
+.home-about-textbox {
+    background-color: #232323;
+    padding: 4em;
+    width: 100vw;
+    margin-left: -2.5%;     
+    outline: 2px solid #00ff6c;
+    outline-offset: -2.5em;
+    color: #FFF;
+    position: relative;
+}
+
+.home-about-textbox h1 {
+    color: #00ff6c;
+    position: absolute; 
+    top: .75em;
+    background: #232323;
+    padding: 0 .25em;
+    left: 50%;
+    transform: translateX(-50%); 
+}
+
+@media (min-width: 25rem) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    .home-about-textbox h1 {
+        top: .65em;
+        padding: 0 .325em;
+    }
+}
+
+@media (min-width: 60rem) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .home-about {
+        background-image: url(../img/who-we-are.jpg);
+        background-repeat: no-repeat;
+        padding: 5em;
+    }
+
+    .home-about-textbox {
+        width: 50%;
+        padding: 7em;
+        outline-offset: -3.75em;
+        margin-left: -2.5%; 
+        top: -10em; 
+        text-align: left; 
+        box-shadow: 0 0 4em 0 rgba(0, 0, 0, .3);     
+    }
+
+    .home-about-textbox h1 {
+        top: .75em;  
+        left: 3.25rem;
+        transform: translateX(0);      
+    }
+}
