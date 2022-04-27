@@ -204,13 +204,14 @@ nav a {
         outline-offset: -3.75em;
         margin-left: -2.5%; 
         top: -10em; 
-        text-align: left; 
+        text-align: left;  
         box-shadow: 0 0 4em 0 rgba(0, 0, 0, .3);     
     }
 
     .home-about-textbox h1 {
         top: .75em;  
-        left: 3.25rem;
-        transform: translateX(0);      
+        left: 6rem;
+        transform: translateX(0); 
+        text-transform: uppercase;     
     }
 }
