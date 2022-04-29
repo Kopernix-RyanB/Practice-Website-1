@@ -22,6 +22,13 @@ img {
     margin: 0 auto;
 }
 
+.clearfix::after,
+section::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
 /* TYPOGRAPHY */
 
 h1{
@@ -53,6 +60,10 @@ p:last-of-type { /* for the bottom paragraph*/
         font-size: .9em;
     }
 
+.title-cta {
+    margin: 0 0 .5em;
+}
+
 @media (min-width: 60rem) {
     
     p{
@@ -83,6 +94,11 @@ p:last-of-type { /* for the bottom paragraph*/
     }
 }
 
+.button-small {
+    font-size: .7rem;
+    font-weight: 700;
+}
+
 .button-accent {
     color: #00ff6c;
     border-color: #00ff6c; /*to preserve the border color when clicked*/
@@ -94,10 +110,17 @@ p:last-of-type { /* for the bottom paragraph*/
         color: #232323;
     }
 
-.button-small {
-    font-size: .7rem;
-    font-weight: 700;
-}
+.button-dark {
+        color: #232323;
+        border-color: #232323; /*to preserve the border color when clicked*/
+    }
+    
+    .button-dark:hover,
+    .button-dark:focus {
+        background: #232323;
+        color: #00ff6c;
+    }
+    
 
 /* HEADER 
 ===============================*/
@@ -235,7 +258,7 @@ nav a {
 ===============================*/
 
 .portfolio {
-    margin: 3em 0; /* top and bottom 3em, left and right 0em*/
+    margin: 3em 0 0; /* top 3em, left and right and bottom 0em*/
 }
 
 .port-item {
@@ -283,3 +306,20 @@ nav a {
         transform: translateY(0%);
     }
 }
+
+/* CTA 
+===============================*/
+
+.cta {
+    background-color: #00ff6c;
+    padding: 5em 0;
+}
+
+
+
+/* NOTES
+===============================
+
+- My browser is 1920 x 937 (120rem x 58.5625rem), so I get white spaces 
+vertically between the portfolio images
+*/
