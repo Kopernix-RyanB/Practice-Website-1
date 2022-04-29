@@ -23,11 +23,53 @@ img {
 }
 
 .clearfix::after,
-section::after {
+section::after,
+footer::after {
     content: "";
     display: block;
     clear: both;
 }
+
+/* COLUMN SYSTEM */
+
+[class^=col-] { /*this means that any class that starts with "col-", which means col-1 and col-3*/
+    width: 100%;
+    margin-top: 1em;
+}
+
+[class^=col-]:first-child {
+    margin-top: 0;
+}
+
+.col-1 {
+    width: 33.3333334%;
+    float: left;
+}
+
+@media (min-width: 40rem) {
+
+    [class^=col-] { 
+        float: left;
+        padding: 0 .5em;        
+    }
+
+    [class^=col-]:first-child {
+        padding-left: 0;
+    }
+    
+    [class^=col-]:last-child {
+        padding-right: 0;
+    }
+
+    .col-3 {
+        width: 50%;
+    }
+    
+    .col-1 {
+        width: 16.6666%;
+    }    
+}
+
 
 /* TYPOGRAPHY */
 
@@ -62,6 +104,12 @@ p:last-of-type { /* for the bottom paragraph*/
 
 .title-cta {
     margin: 0 0 .5em;
+}
+
+.unstyled-list {  
+    margin: 0;
+    padding: 0; /* to always remove any paddings or margins automatically applied by the browser*/
+    list-style-type: none;
 }
 
 @media (min-width: 60rem) {
@@ -315,6 +363,16 @@ nav a {
     padding: 5em 0;
 }
 
+/* FOOTER 
+===============================*/
+
+footer {
+    background: #232323;
+    color: #FFF;
+    text-align: left;
+    padding: 5em 0;
+}
+
 
 
 /* NOTES
@@ -322,4 +380,7 @@ nav a {
 
 - My browser is 1920 x 937 (120rem x 58.5625rem), so I get white spaces 
 vertically between the portfolio images
+
+-With Emmet, I wrote a single line function that generated the whole 
+html skeleton of the page. 
 */
