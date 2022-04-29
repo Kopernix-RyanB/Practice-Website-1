@@ -2,6 +2,7 @@
 
 * {
     box-sizing: border-box;
+    transition: all ease-in-out 250ms;
 }
 
 body {
@@ -40,8 +41,8 @@ p:last-of-type { /* for the bottom paragraph*/
 }
 
 .title {
-    font-size: 2rem;
-    margin-bottom: 2em;
+    font-size: 2.5rem;
+    margin-bottom: 1.5em;
     font-weight: 900; /* this line and the one after fix the title to be a bit centered*/
     margin-top: 1em;
 }
@@ -76,6 +77,12 @@ p:last-of-type { /* for the bottom paragraph*/
     padding: .5em 1.75em;
 }
 
+@media (min-width: 60rem) {
+    .button {
+        font-size: 1.5rem;
+    }
+}
+
 .button-accent {
     color: #00ff6c;
     border-color: #00ff6c; /*to preserve the border color when clicked*/
@@ -87,13 +94,14 @@ p:last-of-type { /* for the bottom paragraph*/
         color: #232323;
     }
 
-@media (min-width: 60rem) {
-    .button {
-        font-size: 1.5rem;
-    }
+.button-small {
+    font-size: .7rem;
+    font-weight: 700;
 }
 
-/* HEADER */
+/* HEADER 
+===============================*/
+
 header {
     position: absolute;
     left: 0;
@@ -126,7 +134,7 @@ nav a {
         color: #DDD;
     }
 
-@media (min-width: 800px) {
+@media (min-width: 60rem) {
     .logo {
         float: left;
     }
@@ -136,7 +144,8 @@ nav a {
     }
 }
 
-/* HERO SECTION */
+/* HERO SECTION 
+===============================*/
 
 .home-hero {
     background-image: url(../img/hero-bg.jpg);
@@ -146,14 +155,15 @@ nav a {
     color: #FFF;
 }
 
-@media (min-width: 800px) {
+@media (min-width: 60rem) {
     .home-hero {
         height: 100vh;
-        padding-top: 30vh;
+        padding-top: 35vh;
     }
 }
 
-/* ABOUT SECTION */
+/* ABOUT SECTION 
+===============================*/
 
 .home-about-textbox {
     background-color: #232323;
@@ -171,15 +181,19 @@ nav a {
     position: absolute; 
     top: .75em;
     background: #232323;
-    padding: 0 .25em;
+    padding: 0 .145em;
     left: 50%;
-    transform: translateX(-50%); 
+    transform: translateX(-50%);    
 }
 
 @media (min-width: 25rem) {
     h1 {
         font-size: 2rem;
     }
+
+    .home-about-textbox {
+		padding: 5.5em;
+	}
 
     .home-about-textbox h1 {
         top: .65em;
@@ -195,7 +209,7 @@ nav a {
     .home-about {
         background-image: url(../img/who-we-are.jpg);
         background-repeat: no-repeat;
-        padding: 5em;
+        padding: 10em;
     }
 
     .home-about-textbox {
@@ -203,7 +217,7 @@ nav a {
         padding: 7em;
         outline-offset: -3.75em;
         margin-left: -2.5%; 
-        top: -10em; 
+        top: -5em; 
         text-align: left;  
         box-shadow: 0 0 4em 0 rgba(0, 0, 0, .3);     
     }
@@ -213,5 +227,59 @@ nav a {
         left: 6rem;
         transform: translateX(0); 
         text-transform: uppercase;     
+    }
+}
+
+
+/* PORTFOLIO
+===============================*/
+
+.portfolio {
+    margin: 3em 0; /* top and bottom 3em, left and right 0em*/
+}
+
+.port-item {
+    margin: 0;
+    position: relative; /*to be able to move items properly*/
+}
+
+.port-item img {
+    display: block;
+}
+
+.port-desc {
+    position: absolute;
+    z-index: 100;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color: #DDD;
+    background: rgb(0, 0, 0, .6);
+    padding-bottom: 2em;
+}
+
+.port-desc p {
+    margin: 1em;
+}
+
+@media (min-width: 37rem) {
+    .port-item {
+        width: 50%;
+        float: left;
+    }
+}
+
+@media (min-width: 60rem) {
+    .port-item {
+        width: 33.3333334%;
+        overflow: hidden;
+    }
+
+    .port-desc {
+        transform: translateY(150%);
+    }
+
+    .port-item:hover .port-desc {
+        transform: translateY(0%);
     }
 }
